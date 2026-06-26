@@ -1,0 +1,10 @@
+C:\Users\Student\source\repos\TaskChat\bin\Debug\TaskChat.dacpac
+C:\Users\Student\source\repos\TaskChat\bin\Debug\TaskChat.dll
+C:\Users\Student\source\repos\TaskChat\bin\Debug\TaskChat.pdb
+C:\Users\Student\source\repos\TaskChat\obj\Debug\TaskChat.sqlproj.AssemblyReference.cache
+C:\Users\Student\source\repos\TaskChat\obj\Debug\Model.xml
+C:\Users\Student\source\repos\TaskChat\obj\Debug\refactor.xml
+C:\Users\Student\source\repos\TaskChat\obj\Debug\postdeploy.sql
+C:\Users\Student\source\repos\TaskChat\obj\Debug\predeploy.sql
+C:\Users\Student\source\repos\TaskChat\obj\Debug\TaskChat.dll
+C:\Users\Student\source\repos\TaskChat\obj\Debug\TaskChat.pdb
