@@ -1,0 +1,176 @@
+﻿<Window x:Class="Part3_POE.WindowGame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:Part3_POE"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Quiz Game"
+        Height="450"
+        Width="800"
+        Background="#1E1E2E">
+
+    <Border CornerRadius="15"
+            Padding="15"
+            Margin="10">
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#3A0CA3" Offset="0"/>
+                <GradientStop Color="#4361EE" Offset="0.5"/>
+                <GradientStop Color="#4CC9F0" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20"
+                              Opacity="0.4"
+                              ShadowDepth="4"/>
+        </Border.Effect>
+
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- HEADER -->
+            <Grid Grid.Row="0" Margin="0,0,0,15">
+
+                <TextBlock Text="🧠 Quiz Game"
+                           Foreground="White"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+
+                <Button x:Name="CloseButton"
+                        Content="Back"
+                        Width="30"
+                        HorizontalAlignment="Left"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Click="CloseButton_Click" Margin="720,0,0,0">
+
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                            <GradientStop Color="#06D6A0" Offset="0"/>
+                            <GradientStop Color="#118AB2" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+            </Grid>
+
+            <!-- QUIZ AREA -->
+            <Border Grid.Row="1"
+                    Background="#22FFFFFF"
+                    CornerRadius="10"
+                    Padding="15">
+
+                <StackPanel>
+
+                    <!-- QUESTION -->
+                    <TextBlock x:Name="QuestionText"
+                              Text="{Binding Question}"
+                               Foreground="White"
+                               FontSize="18"
+                               FontWeight="SemiBold"
+                               TextWrapping="Wrap"
+                               Margin="0,0,0,15"
+                               />
+
+                    <!-- OPTIONS (RADIO BUTTONS) -->
+                    <StackPanel x:Name="OptionsPanel">
+
+                        <RadioButton Content="{Binding Option1}"
+                                     GroupName="Quiz"
+                                     Foreground="White"
+                                     Margin="0,5"
+                                      IsChecked="{Binding SelectedOption1, Mode=TwoWay}"/>
+
+                        <RadioButton Content="{Binding Option2}"
+                                     GroupName="Quiz"
+                                     Foreground="White"
+                                     Margin="0,5"
+                                     IsChecked="{Binding SelectedOption2, Mode=TwoWay}"/>
+
+                        <RadioButton Content="{Binding Option3}"
+                                     GroupName="Quiz"
+                                     Foreground="White"
+                                     Margin="0,5"
+                                      IsChecked="{Binding SelectedOption3, Mode=TwoWay}"/>
+
+                        <RadioButton Content="{Binding Option4}"
+                                     GroupName="Quiz"
+                                     Foreground="White"
+                                     Margin="0,5"
+                                      IsChecked="{Binding SelectedOption4, Mode=TwoWay}"/>
+
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+
+            <!-- SCORE PANEL + BUTTON -->
+            <Border Grid.Row="2"
+                    Margin="0,15,0,0"
+                    CornerRadius="12"
+                    Padding="10">
+
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#11998E" Offset="0"/>
+                        <GradientStop Color="#38EF7D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- SCORE PANEL -->
+                    <Border Grid.Column="0"
+                            Background="#33FFFFFF"
+                            CornerRadius="10"
+                            Padding="8"
+                            VerticalAlignment="Center">
+
+                        <TextBlock x:Name="ScoreText"
+                                   Text="{Binding ScoreString}"
+                                   Foreground="White"
+                                   FontSize="16"
+                                   FontWeight="Bold"/>
+                    </Border>
+
+                    <!-- NEXT BUTTON -->
+                    <Button x:Name="NextButton"
+                            Grid.Column="1"
+                            Content="Next ➤"
+                            Width="120"
+                            Height="40"
+                            Margin="10,0,0,0"
+                            Foreground="White"
+                            FontWeight="Bold"
+                            BorderThickness="0"
+                            Cursor="Hand"
+                            Click="NextButton_Click"
+                             IsEnabled="{Binding IsSubmitEnabled}">
+
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#00C6FF" Offset="0"/>
+                                <GradientStop Color="#0072FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+
+                </Grid>
+            </Border>
+
+        </Grid>
+    </Border>
+</Window>
